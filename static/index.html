@@ -1,0 +1,802 @@
+<?php 
+if(isset($_POST['submit'])){
+    $to = "matheusantonio96@gmail.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $first_name = $_POST['name'];
+    $subject = "Mensagem recebida no site";
+    $subject2 = "Copy of your form submission";
+    $message = $first_name . " enviou a seguinte mensagem:" . "\n\n" . $_POST['message'] . "\n\nTelefone: " . $_POST['phone'] . "\n\nEmail: " . $from;
+    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="Matheus Ataide" />
+        <title>C. Romero Construtora</title>
+
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        
+        <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        
+        <!-- Slick CSS -->
+        <link href="./assets/slick/slick.css" rel="stylesheet" />
+        <link href="./assets/slick/slick-theme.css" rel="stylesheet" />
+
+        <!-- Animate CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+        />
+
+        <!-- Bootstrap-->
+        <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        
+        <!-- Theme CSS -->
+        <link href="css/agency.css" rel="stylesheet" />
+        <link href="css/cromero.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top">
+                    <img src="./img/logos/logo1.png" alt="C. Romero Construtora" />
+                </a>
+                <button 
+                    class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarResponsive" 
+                    aria-controls="navbarResponsive" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item wow fadeInTop" data-wow-delay=".1s">
+                            <a class="nav-link" href="#about">Quem somos</a>
+                        </li>
+                        <li class="nav-item wow fadeInTop" data-wow-delay=".2s">
+                            <a class="nav-link" href="#portfolio">Empreendimentos</a>
+                        </li> 
+                        <li class="nav-item wow fadeInTop" data-wow-delay=".3s">
+                            <a class="nav-link" href="#contact">Entre em contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Executamos projetos que irão mudar seu conceito de viver ou investir!</div>
+                <div class="masthead-heading text-uppercase">Especialistas em realizar sonhos!</div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#portfolio">
+                    Conheça os empreendimentos
+                </a>
+            </div>
+        </header>
+
+        <!-- Team-->
+        <section class="page-section bg-light" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 offset-lg-1">
+                        <div class="team-member wow fadeInLeft">
+                            <img class="mx-auto rounded-circle" src="./img/team/responsavel.png" alt="..." />
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="section-heading text-uppercase">Cristiano Romero</h2>
+                        <h3 class="section-subheading text-muted">Sócio Diretor</h3>
+                        <p class="text-muted">
+                            ENGENHEIRO MESTRE E ESPECIALISTA <br />
+                            PÓS GRADUADO EM GESTÃO INTEGRADA EM QSMS E ENGENHARIA DE SST <br />
+                            STRUCTURAL ENGINEERING BRIDGES – EDX PRINCETON UNIVERSITY – USA. <br/>
+                            POSSUI 10 ANOS DE ATUAÇÃO NO MERCADO DE CONSTRUÇÃO, TENDO ATUADO EM DIVERSOS CONTINENTES E EM GRANDES ESTADOS BRASILEIROS.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 offset-md-1">
+                        <h2 class="section-heading text-uppercase my-3 mb-5">Regiões de atuação</h2>
+                        <p class="text-muted text-uppercase" style="line-height: 1.75em;">
+                            Já atuamos nos estados de Alagoas, Sergipe, Pernambuco, Bahia, Ceará, Paraíba, 
+                            Maranhão, Piauí, Rio Grande do Norte, Amazonas, Amapá, São Paulo, Espírito Santo, 
+                            Minas Gerais e Distrito Federal.
+                        </p>
+                    </div>
+                    <div class="col-md-3 offset-md-1">
+                        <img src="./img/mapa.png" alt="" class="img-block img-fluid wow fadeInRight">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Empreendiments</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 1-->
+                        <div class="single-project wow zoomIn">
+                            <a class="project-link" data-bs-toggle="modal" href="#portfolioModal1">
+                                <div class="project-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fas fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <div class="project-image">
+                                    <img class="img-fluid" src="img/projects/varandas-do-porto/icone.png" alt="..." />
+                                </div>
+                            </a>
+                            <div class="project-caption">
+                                <div class="project-caption-heading">Varandas do Porto Residence</div>
+                                <div class="portfolio-caption-subheading text-muted">Porto de Galinhas, PE</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 2-->
+                        <div class="single-project wow zoomIn" data-wow-delay=".1s">
+                            <a class="project-link" data-bs-toggle="modal" href="#project-flat">
+                                <div class="project-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fas fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <div class="project-image">
+                                    <img class="img-fluid" src="img/projects/flat/icone.jpg" alt="..." />
+                                </div>
+                            </a>
+                            <div class="project-caption">
+                                <div class="project-caption-heading">Varandas de Tamandaré</div>
+                                <div class="portfolio-caption-subheading text-muted">Tamandaré, PE</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="single-project">
+                            <a class="project-link" data-bs-toggle="modal" href="#project-noronha2">
+                                <div class="project-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fas fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <div class="project-image">
+                                    <img class="img-fluid" src="img/projects/flats-noronha-2/icone.png" alt="..." />
+                                </div>
+                            </a>
+                            <div class="project-caption">
+                                <div class="project-caption-heading">Flats Noronha 2</div>
+                                <div class="portfolio-caption-subheading text-muted">Localização, AL</div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Project DUPLEX PETROPOLIS-->
+                        <div class="single-project wow zoomIn" data-wow-delay=".2s">
+                            <a class="project-link" data-bs-toggle="modal" href="#project-petropolis">
+                                <div class="project-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fas fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <div class="project-image">
+                                    <img class="img-fluid" src="img/projects/duplex-petropolis/icone.png" alt="..." />
+                                </div>
+                            </a>
+                            <div class="project-caption">
+                                <div class="project-caption-heading">Duplex Petrópolis</div>
+                                <div class="portfolio-caption-subheading text-muted">Caruaru, PE</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <!-- Project Prédios-->
+                    <!--
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="single-project">
+                            <a class="project-link" data-bs-toggle="modal" href="#project-predio">
+                                <div class="project-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fas fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <div class="project-image">
+                                    <img class="img-fluid" src="img/projects/predio/icone.png" alt="..." />
+                                </div>
+                            </a>
+                            <div class="project-caption">
+                                <div class="project-caption-heading">SERVIÇOS EXECUTADOS EM RESIDENCIAIS E EMPRESARIAIS DE GRANDE PORTE</div>
+                                <div class="portfolio-caption-subheading text-muted">Localização, AL</div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Entre em contato</h2>
+                    <h3 class="section-subheading text-muted">Responderemos assim que possível</h3>
+
+                </div>
+                <form id="contactForm" action="" method="POST">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <!-- Name input-->
+                                <input class="form-control" id="name" type="text" placeholder="Seu nome *" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Email address input-->
+                                <input class="form-control" id="email" type="email" placeholder="Seu email *" data-sb-validations="required,email" />
+                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            </div>
+                            <div class="form-group mb-md-0">
+                                <!-- Phone number input-->
+                                <input class="form-control" id="phone" type="tel" placeholder="Seu telefone *" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <!-- Message input-->
+                                <textarea class="form-control" id="message" placeholder="Sua mensagem *" data-sb-validations="required"></textarea>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Submit success message-->
+                    <!---->
+                    <!-- This is what your users will see when the form-->
+                    <!-- has successfully submitted-->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center text-white mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                        </div>
+                    </div>
+                    <!-- Submit error message-->
+                    <!---->
+                    <!-- This is what your users will see when there is-->
+                    <!-- an error submitting the form-->
+                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                    <!-- Submit Button-->
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-xl text-uppercase wow zoomIn"
+                            id="submitButton" type="submit" name="submit">
+                            Enviar mensagem
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <a class="scroll-to-top rounded" href="#" style="opacity: 1; display: block;">
+            <svg class="svg-inline--fa fa-angle-up fa-w-10" 
+                aria-hidden="true" 
+                focusable="false" 
+                data-prefix="fas" 
+                data-icon="angle-up" 
+                role="img" 
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 320 512" 
+                data-fa-i2svg="">
+                    <path fill="currentColor" d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"></path>
+            </svg>
+            <!-- <i class="fas fa-angle-up"></i> Font Awesome fontawesome.com -->
+        </a>
+
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; C. Romero Construtora 2022</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a 
+                            class="btn btn-dark btn-social mx-2 wow zoomIn"
+                            data-wow-offset="0"
+                            target="_blank"
+                            href="https://wa.me/+5581996651965">
+                                <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a 
+                            class="btn btn-dark btn-social mx-2 wow zoomIn"
+                            data-wow-offset="0"
+                            target="_blank"
+                            href="https://www.instagram.com/c.romeroconstrutora">
+                                <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        Criado por <a href="https://www.instagram.com/matheusataidedesign" target="_blank">@matheusataidedesign</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Portfolio Modals-->
+        <!-- Portfolio item 1 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Varandas do Porto Residence</h2>
+                                    <p class="item-intro text-muted">Empreendimento em Porto de Galinhas, Pernambuco</p>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="project-view">
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/varandas-do-porto/VARANDAS DO PORTO NOITE 02 (1).png"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/flats-noronha-2/RENDER EXTERNO FLATS CRISTIANO 06.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/flats-noronha-2/RENDER EXTERNO FLATS CRISTIANO 07.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/flats-noronha-2/RENDER EXTERNO FLATS CRISTIANO 08.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/flats-noronha-2/RENDER EXTERNO FLATS CRISTIANO 09.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/flats-noronha-2/RENDER EXTERNO FLATS CRISTIANO 10.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/flats-noronha-2/RENDER EXTERNO FLATS CRISTIANO 11.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/varandas-do-porto/rooftop noite 02.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/varandas-do-porto/rooftop noite 07.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/varandas-do-porto/rooftop noite 08.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/varandas-do-porto/rooftop noite 09.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/varandas-do-porto/rooftop noite 10.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/varandas-do-porto/rooftop noite 11.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/varandas-do-porto/RECEPÇÃO 01 R .png"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/varandas-do-porto/RECEPÇÃO 05.png"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/varandas-do-porto/RECEPÇÃO 06.png"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/varandas-do-porto/ACADEMIA 01.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/varandas-do-porto/ACADEMIA 02.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/varandas-do-porto/ACADEMIA 03.jpg"
+                                                        alt="..." />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <p class="description">Mais um empreendimento com alto padrão de qualidade. Apartamentos que trazem o conforto do seu lar e a interação com a natureza em um ambiente praia/residencial que fará toda diferença para você e sua família.</p>
+                                            <a class="btn btn-primary btn-xl text-uppercase"
+                                                href="https://wa.me/+5581996651965"
+                                                target="_blank">
+                                                <i class="fab fa-whatsapp me-1"></i>
+                                                Fale conosco
+                                            </a>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Project FLAT modal popup-->
+        <div class="portfolio-modal modal fade" id="project-flat" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Varandas de Tamandaré</h2>
+                                    <p class="item-intro text-muted">Empreendimento em Tamandaré, Pernambuco</p>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="project-view">
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/flat/TAMANDARÉ CRISTIANO_1 - Photo.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/flat/TAMANDARÉ CRISTIANO_2 - Foto.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/flat/TAMANDARÉ CRISTIANO_4 - Foto.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/flat/TAMANDARÉ CRISTIANO_5 - Foto.jpg"
+                                                        alt="..." />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <p class="description">Com o conceito de interação com a natureza buscando a união do SOL, MAR e daquela VARANDA, foi concebido o empreendimento Varandas de Tamandaré. Flats modernos com 23m² de área construída, pensado e idealizado para que os seus melhores momentos sejam eternizados do jeito que você e sua família merecem.</p>
+                                            <a class="btn btn-primary btn-xl text-uppercase"
+                                                href="https://wa.me/+5581996651965"
+                                                target="_blank">
+                                                <i class="fab fa-whatsapp me-1"></i>
+                                                Fale conosco
+                                            </a>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Project FLATS NORONHA 2 modal popup-->
+        <div class="portfolio-modal modal fade" id="project-noronha2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Varandas de Tamandaré</h2>
+                                    <p class="item-intro text-muted">Empreendimento em Tamandaré, Pernambuco</p>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="project-view">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <p class="description">Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <strong>Client:</strong>
+                                                    Threads
+                                                </li>
+                                                <li>
+                                                    <strong>Category:</strong>
+                                                    Illustration
+                                                </li>
+                                            </ul>
+                                            <a class="btn btn-primary btn-xl text-uppercase"
+                                                href="https://wa.me/+5581996651965"
+                                                target="_blank">
+                                                <i class="fab fa-whatsapp me-1"></i>
+                                                Fale conosco
+                                            </a>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Project DUPLEX PETROPOLIS modal popup-->
+        <div class="portfolio-modal modal fade" id="project-petropolis" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Duplex Petrópolis</h2>
+                                    <p class="item-intro text-muted">Condomínio residencial em Caruaru, Pernambuco</p>
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <div class="project-view">
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/duplex-petropolis/TESTES 2_1 - Photo.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/duplex-petropolis/TESTES 2_2 - Foto.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/duplex-petropolis/TESTES 2_3 - Foto.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/duplex-petropolis/TESTES 2_4 - Foto.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/duplex-petropolis/TESTES 2_5 - Foto.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/duplex-petropolis/TESTES 2_6 - Foto.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/duplex-petropolis/2B8A329D59D04A8DA7ED399341A7F533.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/duplex-petropolis/2E13F33FAE1E41AD8EC56D30033946E9.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/duplex-petropolis/37C74740722546389D73254696C49621.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/duplex-petropolis/811E6E83222844128557540B684F19F6.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/duplex-petropolis/D59CC3E2C675417292FEEDF0E77DF8DB.jpg"
+                                                        alt="..." />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <ul class="list-inline">
+                                                <li>Excelente localização com 129,30m<sup>2</sup> de área construída.</li>
+                                                <li>3 quartos sendo duas suítes.</li>
+                                                <li>Wc social.</li>
+                                                <li>Sala para dois ambientes.</li>
+                                                <li>Cozinha.</li>
+                                                <li>Área de serviço.</li>
+                                                <li>Espaço multi uso (sala/escritório).</li>
+                                                <li>Reservatório inferior com capacidade para 10.000L.</li>
+                                                <li>Vaga para 2 veículos.</li> 
+                                            </ul>
+                                            <button class="btn btn-primary btn-xl text-uppercase"
+                                                data-bs-dismiss="modal"
+                                                type="button">
+                                                <i class="fab fa-whatsapp me-1"></i>
+                                                Fale conosco
+                                            </button>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Project PREDIO modal popup-->
+        <div class="portfolio-modal modal fade" id="project-predio" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">SERVIÇOS EXECUTADOS EM RESIDENCIAIS E EMPRESARIAIS DE GRANDE PORTE</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="project-view">
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/predio/42FAEFCEB59542F2AB804F213D70A9AA.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/predio/6F1735F769CB48E7A005949F318A71BE.jpg"
+                                                        alt="..." />
+                                                </div>
+                                                <div class="view">
+                                                    <img 
+                                                        class="img-fluid d-block mx-auto"
+                                                        src="./img/projects/predio/CC7B0F016FC44A43813B354D1052BFD7.jpg"
+                                                        alt="..." />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <p class="description">Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <strong>Client:</strong>
+                                                    Threads
+                                                </li>
+                                                <li>
+                                                    <strong>Category:</strong>
+                                                    Illustration
+                                                </li>
+                                            </ul>
+                                            <button class="btn btn-primary btn-xl text-uppercase"
+                                                data-bs-dismiss="modal"
+                                                type="button">
+                                                <i class="fab fa-whatsapp me-1"></i>
+                                                Fale conosco
+                                            </button>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jquery -->
+        <script
+            src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+
+        <!-- Bootstrap core JS-->
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        
+        <!-- Slick JS -->
+        <script src="./assets/slick/slick.min.js"></script>
+
+        <!-- WOW JS -->
+        <script src="./assets/wowjs/wow.min.js"></script>
+        
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

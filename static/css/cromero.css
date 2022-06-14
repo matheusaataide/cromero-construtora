@@ -1,0 +1,130 @@
+h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+a {
+    color: #333;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+}
+a:hover {
+    color: #ffc451;
+}
+.btn-primary { 
+    background-color: #fff200;
+    border-color: transparent;
+    color: #333;
+    outline: 0;
+}
+.btn-primary:active,
+.btn-primary:hover {
+    background-color: #ffc451;
+    border-color: transparent;
+    color: #333;
+}
+
+
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    font-family: 'Lato', sans-serif;
+}
+#mainNav .navbar-nav .nav-item .nav-link.active,
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: #fff200;
+}
+@media (min-width: 992px) {
+    #mainNav .navbar-brand img {
+        height: 3.5rem !important;
+    }
+    #mainNav:not(.navbar-shrink) .navbar-brand img {
+        height: 6rem !important;
+    }
+}
+
+header.masthead {
+    background-image: url("../img/bg.png");
+    background-attachment: fixed;
+}
+@media (min-width: 768px) {
+    header.masthead .masthead-heading {
+        font-size: 3.5em;
+    }
+}
+
+/****** PORTFOLIO *******/
+.single-project {
+    max-width: 26rem;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 15px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+.single-project .project-image img {
+    display: block;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.single-project .project-link {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+.single-project .project-link .project-hover {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 242, 0, 0.9);
+    border-radius: 10px 10px 0 0;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity ease-in-out 0.25s;
+}
+.single-project .project-link:hover .project-hover {
+    opacity: 1;
+}
+.single-project .project-hover .portfolio-hover-content {
+    font-size: 1.25rem;
+    color: #333;
+}
+.single-project .project-caption {
+    margin: 10px 25px;
+}
+.single-project .project-caption .project-caption-heading {
+    font-size: 1.5rem;
+    font-family: "Lato", Arial, sans-serif;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.project-view img {
+    border-radius: 10px;
+}
+.modal p.description {
+    text-align: justify;
+}
+.modal ul li {
+    text-align: left;
+}
+
+.team-member img {
+    width: 20rem;
+    height: 20rem;
+}
+
+.scroll-to-top {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    display: none;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    background: rgba(52, 58, 64, 0.5);
+    line-height: 45px;
+}
